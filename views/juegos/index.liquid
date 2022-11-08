@@ -1,0 +1,54 @@
+{% layout "layout.liquid" %} {% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvatarVerse</title>
+
+    <style type="text/css">
+        body {
+            background-color: red;
+            color: rgb(215, 247, 236);
+            text-align: left;
+            font-size: 18;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            justify-items: center;
+        }
+
+        .navBar {
+            display: grid;
+            grid-template-columns: repeat(7, auto);
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bannerDiv">
+        <h1>Ariel Programer's Club</h1>
+    </div>
+    <div class="navBar">
+        <a href="/juegos/nuevo"><button>Haga Clic Aquí Para Entrar Nueva Jugada</button></a><br>
+        <a href="/juegos/juegosdehoy"><button>Haga Clic Aquí Para ver Registros Juegos de Hoy</button></a><br>
+        <a href="/juegos/todosjuegos"><button>Haga Clic Aquí Para Ver Registros completo</button></a><br>
+        <a href="/user/logout"><button>Cerrar Sesión</button></a>
+    </div>
+
+    <br>
+    <br>
+    <div class="container">
+        {%for juego in juegos%}
+        <div>
+            <h3>Estación: {{juego.station}} - Duración: {{juego.duration}} - Precio: RD$ {{juego.price}} - Tiempo de Entrada: {{juego.dateString}} {{juego.timeString}}</h3>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+
+{% endblock %}

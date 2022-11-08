@@ -1,0 +1,23 @@
+{% layout "layout.liquid" %}
+{% block content %}
+<header>
+    <div class="bannerDiv">
+        {% comment %} <img src="https://i.ibb.co/dWwnQzf/avatarverse.jpg" alt="avatarverse" border="0" width="600" height="175"> {% endcomment %}
+        <h1>Ariel Programers Club</h1>
+        </div>
+</header>
+<div>
+    <form action="/user/login" method="post">
+        <fieldset>
+            <legend>User Login</legend>
+            <label>USERNAME:
+                <input type="text" name="username" required />
+            </label>
+            <label>PASSWORD:
+                <input type="password" name="password" required />
+            </label>
+            <input type="submit" value="Login" />
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

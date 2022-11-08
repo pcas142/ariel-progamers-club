@@ -1,0 +1,36 @@
+ body {
+     background-color: red;
+     color: rgb(215, 247, 236);
+     text-align: left;
+     font-size: 18;
+ }
+
+ .bannerDiv {
+     display: grid;
+     grid-template-columns: repeat(1, auto);
+     justify-items: center;
+ }
+
+ .navBar {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    justify-items: center;
+}
+
+ .container {
+     display: grid;
+     grid-template-columns: repeat(4, auto);
+     justify-items: center;
+ }
+
+ .gifContainer {
+     display: grid;
+     grid-template-columns: repeat(1, auto);
+     justify-items: center;
+ }
+
+ button {
+    background-color: rgb(84, 163, 227);
+    color: white;
+    border-color: white;
+ }
