@@ -5,21 +5,15 @@
      font-size: 18;
  }
 
- .bannerDiv {
-     display: grid;
-     grid-template-columns: repeat(1, auto);
-     justify-items: center;
- }
-
  .navBar {
     display: grid;
     grid-template-columns: repeat(7, auto);
     justify-items: center;
 }
 
- .container {
+ .container .bannerDiv {
      display: grid;
-     grid-template-columns: repeat(4, auto);
+     grid-template-columns: repeat(1, auto);
      justify-items: center;
  }
 
