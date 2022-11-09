@@ -2,15 +2,21 @@
 <div>
     <form action="" method="post">
         <fieldset>
-            <legend>Nuevo Usuario</legend>
+            <legend>Crear Nuevo Usuario</legend>
             <label>Nombre de Usuario:
-                <input type="text" name="username" required /> </label>
+                <input type="text" name="username" required /> 
+            </label>
+            <br>
             <label>Clave:
                 <input type="password" name="password" required />
             </label>
-            <input type="submit" value="Create Account" />
-            <a href="/user/login"><button>Volver a la Página de Inicio de Sesión</button></a>
+            <br>
+            <br>
+            <input type="submit" value="Crear la Cuenta" />
+            <br>
         </fieldset>
+        <br>
+        <a href="/user/login"><button>Volver a la Página de Inicio de Sesión</button></a>
     </form>
 </div>
 {% endblock %}
