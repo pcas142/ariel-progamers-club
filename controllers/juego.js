@@ -56,6 +56,37 @@ router.get('/juegosdehoy', (req, res) => {
 		})
 })
 
+router.get('/totaldehoy', (req, res) => {
+	sum = 0
+	today = new Date()
+	var todaysDate = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+
+	Juego.aggregate(
+		[
+			   // Stage 1: Filter pizza order documents by pizza size
+			   {
+				$match: { dateString: todaysDate }
+			 },
+			 // Stage 2: Group remaining documents by pizza name and calculate total quantity
+			 {
+				$group: { _id: "$station",  total: { $sum: "$price" } }
+			 }
+		],
+		function(err, results) {
+			if (err) {
+				console.log(err)
+				res.json({ err })
+			} else {
+				//res.json(results)
+				results.forEach(({total}) => {
+					sum += total;
+				});
+				res.render('./juegos/totalprice.liquid', { results, sum })
+			}
+		  }
+		);
+})
+
 // NEW route  MY FAVORITE PART -TAKES YOU TO THE PAGE WHERE YOU CREATE NEW AVATAR
 router.get('/nuevo', (req, res) => {
 	res.render('../views/juegos/new.liquid');

@@ -1,0 +1,57 @@
+{% layout "layout.liquid" %} {% block content %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariel Progamer's Club</title>
+
+    <style type="text/css">
+        body {
+            background-color: red;
+            color: rgb(215, 247, 236);
+            text-align: left;
+            font-size: 18;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(1, auto);
+            justify-items: center;
+        }
+
+        .navBar {
+            display: grid;
+            grid-template-columns: repeat(7, auto);
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bannerDiv">
+        <h1>Ariel Progamer's Club</h1>
+    </div>
+    <div class="navBar">
+        <a href="/juegos/nuevo"><button>Haga Clic Aquí Para Entrar Nueva Sesión de Juego</button></a><br>
+        <a href="/juegos/juegosdehoy"><button>Haga Clic Aquí Para Ver Registros Juegos de Hoy</button></a><br>
+        <a href="/juegos/todosjuegos"><button>Haga Clic Aquí Para Ver Registros Completo</button></a><br>
+        <a href="/user/logout"><button>Cerrar Sesión</button></a>
+    </div>
+
+    <br>
+    <br>
+    <div class="container">
+        <div>
+            <h3>Total de Hoy: RD$ {{sum}}</h3>
+            {%for result in results%}
+            <div>
+                <h3>Estación: {{result._id}} - Precio: RD$ {{result.total}}</h3>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+{% endblock %}
