@@ -7,7 +7,7 @@
 
  .navBar {
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(9, auto);
     justify-items: center;
 }
 
